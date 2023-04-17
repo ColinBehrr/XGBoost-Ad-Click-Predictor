@@ -5,8 +5,8 @@ Created on Tue Apr  4 20:45:21 2023
 
 @author: colinbehr
 """
-import os
-os.chdir('/Users/colinbehr/Downloads')
+#import os
+#os.chdir('/Users/colinbehr/Downloads')
 
 import pandas as pd
 from sklearn.impute import SimpleImputer
@@ -118,7 +118,7 @@ importances_df = importances_df.sort_values(by='Importance', ascending=False)
 print("Most significant features:\n", importances_df.head(10))
 
 df = pd.DataFrame({'innum':test_df['innum'], 'probabilities':xgb_grid.predict_proba(test_df.drop('Click', axis=1))[:, 1]})
-df.to_csv('Team_05_A04.csv')
+df.to_csv('testpredict.csv')
 
 #df = pd.DataFrame({'innum':val_df['innum'], 'probabilities':xgb_grid.predict_proba(val_df.drop('Click', axis=1))[:, 1]})
 #df.to_csv('val.csv')
