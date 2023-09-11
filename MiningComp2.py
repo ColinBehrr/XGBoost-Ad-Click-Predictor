@@ -15,10 +15,10 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from xgboost import XGBClassifier
 
 
-# Load data
+# Load consumer data
 df = pd.read_csv("all_data.csv")
 
-#Add features
+#feature engineering (dispoable income & individual season)
 df['Disposable Income'] = df['Income'] - df['Cost of Living']
 #df['Disposable Income Significance'] = df['Disposable Income'] * df['Economy']
 
